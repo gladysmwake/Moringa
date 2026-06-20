@@ -154,7 +154,27 @@ person.greet()  // "Hi, my name is XOXO"
 ```
 This is actually how most real JavaScript code is written — objects holding data and functions together.
 
-
-
-
 */
+
+
+const bonus="200"
+const sallary=50000;
+
+const sallaryGross=bonus+sallary;
+
+console.log("Gross sallary is ",sallaryGross);
+
+const paye= sallaryGross*0.16;
+console.log("for gross sallary of ", sallaryGross, "Paye is ",paye);
+
+const nhif=2500
+console.log("Nhif deduction " ,nhif)
+
+const sha=2500
+console.log("Sha is ", sha)
+
+const toatalDeduction=paye+nhif+sha;
+console.log("Total deduction is ", toatalDeduction)
+
+const sallaryNet=sallaryGross-toatalDeduction;
+console.log("Net sallary is ", sallaryNet)
