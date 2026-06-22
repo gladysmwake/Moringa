@@ -46,8 +46,30 @@ console.log(val1 + " !== " + val2 + " : " + strictInequality2);
 console.log("Type of strictInequality2: " + typeof strictInequality2);
 
 
+//greater than >
+//less than <
+//greater than or equal to >=
+//less than or equal to <=
 
+let num3 = 10;
+let num4 = 20;
 
+let str5= "a";
+let str6= "A";
+
+console.log(`num3=${num3} and num4=${num4}`);
+console.log(`str5=${str5} and str6=${str6}`);
+
+console.log(`num3 > num4 : ${num3 > num4}`);
+console.log(`str5 > str6 : ${str5 > str6}`); //false because lowercase letters are greater than uppercase letters in Unicode
+console.log(`num3 < num4 : ${num3 < num4}`);
+console.log(`str5 < str6 : ${str5 < str6}`); //true because lowercase letters are greater than uppercase letters in Unicode
+
+console.log(`num3 >= num4 : ${num3 >= num4}`);
+console.log(`str5 >= str6 : ${str5 >= str6}`); //false because lowercase letters are greater than uppercase letters in Unicode
+
+console.log(`num3 <= num4 : ${num3 <= num4}`);
+console.log(`str5 <= str6 : ${str5 <= str6}`); //true because lowercase letters are greater than uppercase letters in Unicode
 
 
 
