@@ -72,4 +72,15 @@ console.log(`Mercy can buy a car ${canBuyCar}`);
 
 
 let simplified=mercy_age<18 && mercy_balance>2000;
+console.log(`simplified ${simplified}`)
 console.log(`Mercy can buy a car ${simplified}`);
+
+console.log(`Mercys age is greater than 18 or she has more than 20k in her account ${is_greater_than_18||has_more_than_20k}`);
+
+
+/*
+    Or ...atleast one statement has to be true for the whole statement to be true
+*/
+
+console.log(`This is not true =${!true}`);
+console.log(`This is not false =${!false}`);
