@@ -17,6 +17,47 @@ ternary (? :)     (Use (? :) (ternary) as a shorthand for if...else
 */
 
 
+
+//if
+//Senario 1
+let numb10 = 36;
+let numb21=0;
+
+if(numb10=36){
+    console.log(`Senario 1 ran!`);
+
+}
+
+//Senario 2
+if (numb21=0){
+    console.log(`Senario 2 ran!`);
+}
+
+//Senario 3
+if (numb10===36){
+    console.log(`Senario 3 ran!`);
+}
+
+//Senario 4
+if (numb21===numb10){
+    console.log(`Senario 4 ran!`);
+}
+
+
+//Senario 5
+if (numb10>numb21){
+    console.log(`Senario 5 ran!`);
+}
+
+//Senario 6
+if(numb10<numb21){
+    console.log(`Senario 6 ran!`);
+}
+
+
+
+
+
 //if....else
 
     let isRaining = true;
@@ -81,3 +122,7 @@ if (age >= 18) {
 } else {
     status = "minor";
 }
+
+
+
+
