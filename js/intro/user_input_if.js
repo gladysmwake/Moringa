@@ -1,8 +1,18 @@
-let age= prompt("Enter your age:")
-let gender= prompt("Enter your gender:")
+let input= prompt("Enter your age:");
+let age = Number(input);
+//let gender= prompt("Enter your gender:");
 
-alert(`You entered ${age}`);
-alert(`Your gender is ${gender}`);
+//alert(`You entered ${age}`);
+//alert(`Your gender is ${gender}`);
+
+if (isNaN(age) || age <= 0) {
+    alert("Invalid input! Please enter a valid age.");
+} else {
+       let gender = prompt("Enter your gender:").toLowerCase();
+       
+    alert(`You entered age: ${age}`);
+    alert(`Your gender is: ${gender}`);
+
 
 if(age<10){
     alert(`You are a baby.`)
@@ -34,3 +44,6 @@ if(age>=55){
     }
     
 }
+
+}
+
