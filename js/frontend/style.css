@@ -1,0 +1,200 @@
+  
+        :root {
+            --bg: #121212;
+            --panel: #1a1a1a;
+            --panel-raised: #1f1f1f;
+            --gold: #d4af37;
+            --gold-dim: #8a7326;
+            --text: #f5f0e6;
+            --text-muted: #a89f8c;
+            --border: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        h1 {
+            color: var(--gold);
+            font-weight: normal;
+            letter-spacing: 2px;
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+
+        /* --- Outer unified panel --- */
+        .page {
+            background: var(--panel);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 45px 50px;
+            width: 340px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 175, 55, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .divider {
+            width: 100%;
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0;
+        }
+
+        /* --- Container / DOM Access section --- */
+        #container {
+            text-align: center;
+            width: 100%;
+        }
+
+        #para {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        li.language {
+            background: var(--panel-raised);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: border-color 0.25s;
+        }
+
+        li.language:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        #btn, #btn1 {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-dim));
+            border: none;
+            border-radius: 4px;
+            color: #1a1a1a;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        #btn:hover, #btn1:hover {
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-1px);
+        }
+
+        #btn:active, #btn1:active {
+            transform: translateY(0);
+        }
+
+        /* --- Secondary button row --- */
+        .btn-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-row button {
+            background: transparent;
+            border: 1px solid var(--gold-dim);
+            color: var(--text);
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.25s, color 0.25s;
+        }
+
+        .btn-row button:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* --- Form --- */
+        #myForm {
+            width: 100%;
+        }
+
+        #myForm label,
+        #myForm .field-label {
+            display: block;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        #myForm input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 6px;
+            background: #0d0d0d;
+            border: 1px solid #444;
+            border-radius: 4px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #myForm input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        #myForm input::placeholder {
+            color: #666;
+            font-style: italic;
+        }
+
+        #myForm button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 14px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-dim));
+            border: none;
+            border-radius: 4px;
+            color: #1a1a1a;
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        #myForm button[type="submit"]:hover {
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-1px);
+        }
+
+        #myForm button[type="submit"]:active {
+            transform: translateY(0);
+        }
+    

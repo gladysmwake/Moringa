@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div class="page">
+
+        <div id="container">
+            <h1>DOM Access</h1>
+            <p id="para">This is a paragraph.</p>
+            <ul>
+                <li class="language">Java Script</li>
+                <li class="language">Css</li>
+                <li class="language">Python</li>
+            </ul>
+            <button id="btn">Click Me</button>
+        </div>
+
+        <hr class="divider">
+
+        <div class="btn-row">
+            <button onclick="Original(this)">Original</button>
+            <button onclick="update(this)">Update</button>
+            <button onclick="Subject(this)">New-stuff</button>
+        </div>
+
+        <button id="btn1" style="width:100%;">Press Me</button>
+
+        <hr class="divider">
+
+        <form id="myForm">
+            <span class="field-label">Name</span>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <span class="field-label" style="margin-top:14px;">Email</span>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <span class="field-label" style="margin-top:14px;">Password</span>
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <script src="domEvents.js"></script>
+    <script src="domAcess.js"></script>
+    <script src="forms.js"></script>
+
+</body>
+</html>
