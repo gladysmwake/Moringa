@@ -1,17 +1,22 @@
+import { useState } from "react";
 import "./index.css";
 
 function Form() {
 
+    const[name, setName] = useState("");
+    const[email, setEmail] = useState("");
+    const[password, setPassword] = useState("");
+
     const nameOnChange = (event) => {
-        console.log("Name is " + event.target.value);
+        setName(event.target.value);
     }
 
     const emailOnChange = (event) => {
-        console.log("Email is " + event.target.value);
+        setEmail(event.target.value);
     }
 
     const passwordOnChange = (event) => {
-        console.log("Password is " + event.target.value);
+        setPassword(event.target.value);
     }
 
     return (

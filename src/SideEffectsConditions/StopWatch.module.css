@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@600;800&display=swap");
+
+.container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 3.5rem 3rem;
+    max-width: 380px;
+    margin: 2rem auto;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(0, 255, 245, 0.08), transparent 60%),
+        #08060c;
+    border: 1px solid rgba(0, 255, 245, 0.35);
+    animation: containerBreathe 4.5s ease-in-out infinite, borderCycle 9s ease-in-out infinite;
+    font-family: "Share Tech Mono", monospace;
+}
+
+/* the "machine idle" pulse — ambient, always-on, independent of the
+   time readout's own glitch (which only fires while running) */
+@keyframes containerBreathe {
+    0%, 100% {
+        box-shadow:
+            0 0 0 1px rgba(255, 43, 214, 0.15),
+            0 0 40px rgba(0, 255, 245, 0.12),
+            inset 0 0 60px rgba(0, 0, 0, 0.6);
+    }
+    50% {
+        box-shadow:
+            0 0 0 1px rgba(255, 43, 214, 0.28),
+            0 0 64px rgba(0, 255, 245, 0.22),
+            inset 0 0 60px rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* border slowly cycles cyan -> magenta -> amber -> cyan, like a slow-charging sigil */
+@keyframes borderCycle {
+    0%, 100% { border-color: rgba(0, 255, 245, 0.35); }
+    33% { border-color: rgba(255, 43, 214, 0.4); }
+    66% { border-color: rgba(255, 184, 0, 0.35); }
+}
+
+/* static horizontal scanlines */
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.035) 0px,
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    z-index: 2;
+}
+
+/* moving light sweep + four pulsing corner nodes, layered in one pseudo-element */
+.container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background-image:
+        linear-gradient(to bottom, transparent, rgba(0, 255, 245, 0.06), transparent),
+        radial-gradient(circle, #00fff5 0%, transparent 70%),
+        radial-gradient(circle, #ff2bd6 0%, transparent 70%),
+        radial-gradient(circle, #ff2bd6 0%, transparent 70%),
+        radial-gradient(circle, #00fff5 0%, transparent 70%);
+    background-repeat: no-repeat;
+    background-size:
+        100% 40%,
+        10px 10px,
+        10px 10px,
+        10px 10px,
+        10px 10px;
+    background-position:
+        0 -40%,
+        10px 10px,
+        calc(100% - 10px) 10px,
+        10px calc(100% - 10px),
+        calc(100% - 10px) calc(100% - 10px);
+    animation: sweep 6s linear infinite, cornerPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes sweep {
+    0% { background-position-y: -40%, 10px, 10px, calc(100% - 10px), calc(100% - 10px); }
+    100% { background-position-y: 100%, 10px, 10px, calc(100% - 10px), calc(100% - 10px); }
+}
+
+@keyframes cornerPulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+}
+
+/* --- signature element: glitching time readout --- */
+.time {
+    position: relative;
+    z-index: 3;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 3.4rem;
+    letter-spacing: 0.08em;
+    color: #e8fffd;
+    margin: 0;
+    text-shadow: 0 0 12px rgba(0, 255, 245, 0.5);
+}
+
+.glitching {
+    animation: flicker 3.2s infinite, glitchShadow 2.6s infinite;
+}
+
+/* RGB-split via animated text-shadow layers — no extra markup needed */
+@keyframes glitchShadow {
+    0%, 90%, 100% {
+        text-shadow: 0 0 12px rgba(0, 255, 245, 0.5);
+    }
+    91% {
+        text-shadow:
+            -2px 0 #ff2bd6,
+            2px 0 #00fff5,
+            0 0 12px rgba(0, 255, 245, 0.5);
+    }
+    93% {
+        text-shadow:
+            2px 1px #ff2bd6,
+            -2px -1px #00fff5,
+            0 0 12px rgba(0, 255, 245, 0.5);
+    }
+    95% {
+        text-shadow:
+            -1px 0 #ff2bd6,
+            1px 0 #00fff5,
+            0 0 12px rgba(0, 255, 245, 0.5);
+    }
+    97% {
+        text-shadow: 0 0 12px rgba(0, 255, 245, 0.5);
+    }
+}
+
+@keyframes flicker {
+    0%, 89%, 100% { opacity: 1; }
+    90% { opacity: 0.4; }
+    91% { opacity: 1; }
+    92% { opacity: 0.6; }
+    93% { opacity: 1; }
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    z-index: 3;
+}
+
+.btn {
+    position: relative;
+    padding: 0.65rem 1.7rem;
+    font-family: "Share Tech Mono", monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    background: transparent;
+    cursor: pointer;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    border: 1px solid;
+    transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.start {
+    border-color: #00fff5;
+    color: #00fff5;
+}
+
+.start:hover {
+    background-color: #00fff5;
+    color: #08060c;
+    box-shadow: 0 0 16px rgba(0, 255, 245, 0.6);
+}
+
+.pause {
+    border-color: #ffb800;
+    color: #ffb800;
+}
+
+.pause:hover {
+    background-color: #ffb800;
+    color: #08060c;
+    box-shadow: 0 0 16px rgba(255, 184, 0, 0.6);
+}
+
+.reset {
+    border-color: #ff2bd6;
+    color: #ff2bd6;
+}
+
+.reset:hover {
+    background-color: #ff2bd6;
+    color: #08060c;
+    box-shadow: 0 0 16px rgba(255, 43, 214, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container,
+    .container::after,
+    .glitching {
+        animation: none;
+    }
+}

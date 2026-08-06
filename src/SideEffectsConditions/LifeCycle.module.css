@@ -1,0 +1,50 @@
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.downgrade {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.downgrade:hover {
+  background-color: #da190b;
+}
+
+.reset {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: #007bb5;
+}
+
+.paragraph {
+  font-size: 16px;
+  color: #9f1d1d;
+  margin-bottom: 10px;
+}
+
+.h1{
+  font-size: 24px;
+  color: #140404;
+  margin-bottom: 20px;
+}

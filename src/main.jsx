@@ -1,11 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Form from './stateAndEvents/form';
-import ClickMe from './stateAndEvents/clickMe';
+import LifeCycle from './SideEffectsConditions/LifeCycle';
+import StopWatch from './SideEffectsConditions/StopWatch';
+import GithubProject from './GithubProject';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Form />
-    <ClickMe />
+    <StopWatch/>
+    <GithubProject/>
   </StrictMode>,
 );

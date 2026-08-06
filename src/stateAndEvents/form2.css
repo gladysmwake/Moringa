@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Courier+Prime:wght@700&display=swap');
+
+.form-container {
+    max-width: 440px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #16121a;
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(255, 45, 149, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(80, 230, 210, 0.12) 0%, transparent 40%);
+    border: 3px solid #ff2d95;
+    color: #e8e8e8;
+    font-family: 'Courier Prime', monospace;
+    animation: morph-shape 8s ease-in-out infinite;
+}
+
+@keyframes morph-shape {
+    0%   { border-radius: 4px 18px 4px 18px; transform: rotate(-0.4deg); box-shadow: 6px 6px 0px #50e6d2, 0 0 25px rgba(255, 45, 149, 0.25); }
+    25%  { border-radius: 22px 6px 20px 6px; transform: rotate(0.6deg); box-shadow: -5px 7px 0px #50e6d2, 0 0 30px rgba(255, 45, 149, 0.3); }
+    50%  { border-radius: 6px 6px 24px 6px; transform: rotate(-0.8deg); box-shadow: 7px -4px 0px #50e6d2, 0 0 20px rgba(80, 230, 210, 0.3); }
+    75%  { border-radius: 20px 20px 6px 20px; transform: rotate(0.3deg); box-shadow: -6px -5px 0px #50e6d2, 0 0 28px rgba(255, 45, 149, 0.28); }
+    100% { border-radius: 4px 18px 4px 18px; transform: rotate(-0.4deg); box-shadow: 6px 6px 0px #50e6d2, 0 0 25px rgba(255, 45, 149, 0.25); }
+}
+
+.form-heading {
+    color: #ff2d95;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: normal;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    display: inline-block;
+    animation: heading-flicker 6s ease-in-out infinite;
+}
+
+@keyframes heading-flicker {
+    0%, 92%, 100% { transform: rotate(-2deg) skew(0deg); text-shadow: 2px 2px 0 #50e6d2, 4px 4px 0 rgba(0,0,0,0.4); opacity: 1; }
+    93% { transform: rotate(3deg) skew(4deg); text-shadow: -3px 2px 0 #50e6d2, 2px -2px 0 #ff2d95; opacity: 0.7; }
+    94% { transform: rotate(-4deg) skew(-3deg); text-shadow: 3px -2px 0 #50e6d2; opacity: 1; }
+    95% { transform: rotate(1deg) skew(2deg); text-shadow: 2px 2px 0 #50e6d2, 4px 4px 0 rgba(0,0,0,0.4); opacity: 0.85; }
+}
+
+.form-field {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 6px;
+    color: #50e6d2;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.form-input {
+    padding: 10px 12px;
+    background-color: #0f0c12;
+    border: 2px solid #444;
+    border-radius: 3px;
+    color: #e8e8e8;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.15s ease;
+}
+
+.form-input:focus {
+    border-color: #ff2d95;
+    box-shadow: 3px 3px 0px #50e6d2;
+    animation: input-jitter 0.3s ease;
+}
+
+@keyframes input-jitter {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, 1px); }
+    50% { transform: translate(2px, -1px); }
+    75% { transform: translate(-1px, -1px); }
+    100% { transform: translate(0, 0); }
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background-color: #ff2d95;
+    border: 2px solid #ff2d95;
+    border-radius: 3px;
+    color: #16121a;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    animation: button-tilt 4s ease-in-out infinite;
+}
+
+@keyframes button-tilt {
+    0%, 100% { transform: rotate(1deg); }
+    50% { transform: rotate(-1.5deg); }
+}
+
+.form-button:hover {
+    background-color: #50e6d2;
+    border-color: #50e6d2;
+    color: #16121a;
+    transform: rotate(-1deg) scale(1.03);
+    box-shadow: 4px 4px 0px #ff2d95;
+    animation: none;
+}
