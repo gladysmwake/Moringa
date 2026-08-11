@@ -1,0 +1,33 @@
+import { useNavigate, useLocation } from "react-router-dom";
+
+function Navigation2() {
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  console.log("current location->", location);
+
+  const isActive = (btnLocation) => {
+    if (location.pathname === btnLocation) {
+      return { backgroundColor: "green", color: "white" };
+    }
+    return {};
+  };
+
+  return (
+    <div>
+      <button style={isActive("/")} onClick={() => navigate("/")}>
+        Home
+      </button>
+      <button style={isActive("/about")} onClick={() => navigate("/about")}>
+        About
+      </button>
+      <button style={isActive("/crazy")} onClick={() => navigate("/crazy")}>
+        Crazy Route
+      </button>
+      <button onClick={() => navigate(-1)}>Go Back</button>
+    </div>
+  );
+}
+
+export default Navigation2;

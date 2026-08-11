@@ -14,7 +14,6 @@ props and state.
 
 function ColorsCircles() {
   const [colors, setColors] = useState([]);
-  const [radius, setRadius] = useState("");
   const [bgColor, setBgColor] = useState("black");
 
   console.log("ColorsCircles render", new Date());
