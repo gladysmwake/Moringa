@@ -30,6 +30,17 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.length + self.width)    
 
+
+class ColorMixin:
+    def show_color(self):
+        print(f"Color : {self.color}")
+
+
+class ColoredRectangle(ColorMixin, Rectangle):
+    def __init__(self, length, width, color):
+        super().__init__(length, width)
+        self.color = color
+
 class Circle(Shape):
     def __init__(self, radius ):
         super().__init__(shape_name = "Circle")
@@ -39,7 +50,17 @@ class Circle(Shape):
     def area(self):
         return math.pi * self.radius **2
     
-    
+print("-*-*" * 10)
+  
 C1 = Circle(radius=9)
 print("Shape name: ", C1.shape_name)
 print("Area is : ", f"{C1.area():.4f}")
+
+print("-*-*" * 10)
+print("-*-*" * 10)
+
+
+R1 = ColoredRectangle(length=20, width=10, color="blue")
+R1.display_shape_info()
+R1.show_color()
+print("-*-*" * 10)
